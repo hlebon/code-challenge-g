@@ -6,8 +6,8 @@ import {
   Title,
   Tooltip,
   Legend,
-} from "chart.js";
-import { Bar } from "react-chartjs-2";
+} from 'chart.js';
+import { Bar } from 'react-chartjs-2';
 
 ChartJS.register(
   BarElement,
@@ -15,17 +15,17 @@ ChartJS.register(
   LinearScale,
   Title,
   Tooltip,
-  Legend
+  Legend,
 );
 
 export function CustomChart() {
   const data = {
-    labels: ["January", "February", "March", "April", "May", "June", "July"],
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
     datasets: [
       {
-        label: "Example Dataset",
+        label: 'Example Dataset',
         data: [65, 59, 80, 81, 56, 55, 40],
-        backgroundColor: "rgb(255, 99, 132)",
+        backgroundColor: 'rgb(255, 99, 132)',
       },
     ],
   };

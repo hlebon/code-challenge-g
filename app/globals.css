@@ -2,24 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .row-gap-sm > div {
-  @apply mb-2 
+  @apply mb-2;
 }
 
 .row-gap-md > div {
-  @apply mb-4 
+  @apply mb-4;
 }
 
 .row-gap-lg > div {
-  @apply mb-6
+  @apply mb-6;
 }
 
 .col-gap > div {
-  @apply mr-2 
+  @apply mr-2;
 }
-
-
 
 :root {
   /* --foreground-rgb: 0, 0, 0;
@@ -38,7 +35,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   /* background: rgb(146, 31, 31) */
-  background: rgb(249 250 251)
+  background: rgb(249 250 251);
 }
 
 @layer utilities {

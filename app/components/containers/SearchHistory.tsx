@@ -1,4 +1,4 @@
-import { IoIosClose } from "react-icons/io";
+import { IoIosClose } from 'react-icons/io';
 
 type SearchHistoryProps = {
   data: string[];

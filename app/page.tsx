@@ -1,23 +1,17 @@
-"use client";
+'use client';
 
-import { Poppins } from "next/font/google";
-import { InputSearchSection } from "./components/containers/InputSearchSection";
-import { LibraryContent } from "./components/containers/LibraryContent";
-import { TabNavigation } from "./components/containers/Navigation";
-import { TabNavigationProvider } from "./hooks/useTabNavigation";
-import { AssetModal } from "./components/containers/AssetModal";
+import { InputSearchSection } from './components/containers/InputSearchSection';
+import { LibraryContent } from './components/containers/LibraryContent';
+import { TabNavigation } from './components/containers/Navigation';
+import { TabNavigationProvider } from './hooks/useTabNavigation';
+import { AssetModal } from './components/containers/AssetModal';
+import { poppins } from './theme/font';
 
-const poppins = Poppins({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
-
-function PageHeader() {
+function PageHeader({ description }: { description: string }) {
   return (
     <div className="text-center">
       <h1 className="text-3xl font-semibold mb-6">Library</h1>
-      <p>Browse for assets needed to report and present analisys.</p>
+      {description && <p>{description}</p>}
     </div>
   );
 }
@@ -26,9 +20,9 @@ export default function Home() {
   return (
     <TabNavigationProvider>
       <main
-        className={`${poppins.className} row-gap-lg w-1/2 container flex-col m-auto pt-10 items-center`}
+        className={`${poppins.className} w-11/12 m-auto md:w-6/12 row-gap-md`} // lg:row-gap-lg w-1/2 container flex-col m-auto pt-10 items-center
       >
-        <PageHeader />
+        <PageHeader description="Browse for assets needed to report and present analisys" />
         <InputSearchSection />
         <div className="sticky top-3 z-10">
           <TabNavigation />

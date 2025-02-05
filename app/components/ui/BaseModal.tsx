@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from 'react';
 
 type BaseModalProps = {
   children: React.ReactNode;
@@ -21,13 +21,13 @@ export function BaseModal({
         }
       }
     },
-    [onCloseBackdrop]
+    [onCloseBackdrop],
   );
 
   useEffect(() => {
-    window.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener('mousedown', handleClickOutside);
     return () => {
-      window.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener('mousedown', handleClickOutside);
     };
   }, [handleClickOutside]);
 
@@ -35,11 +35,11 @@ export function BaseModal({
     <div className="h-full z-50 fixed inset-0 flex items-center justify-center bg-gray-500 bg-opacity-55">
       <div
         ref={modalRef}
-        className="relative bg-white rounded-lg p-6 w-1/2 h-3/4 overflow-y-scroll"
+        className="relative bg-white rounded-lg p-4 w-1/2 h-3/4 overflow-y-scroll"
       >
         {onClose && (
           <button
-            className=" absolute right-2 top-2  text-gray-700 font-bold py-2 px-4 rounded"
+            className="absolute right-2 top-5  text-gray-700 font-bold py-2 px-4 "
             onClick={onClose}
           >
             x

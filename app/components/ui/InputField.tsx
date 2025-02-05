@@ -1,8 +1,8 @@
-import { forwardRef } from "react";
+import { forwardRef } from 'react';
 
 export const InputField = forwardRef(function InputField(
   props: React.InputHTMLAttributes<HTMLInputElement>,
-  ref: React.Ref<HTMLInputElement>
+  ref: React.Ref<HTMLInputElement>,
 ) {
   return (
     <input

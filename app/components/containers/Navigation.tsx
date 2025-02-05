@@ -1,4 +1,4 @@
-import { useTabNavigation } from "../../hooks/useTabNavigation";
+import { useTabNavigation } from '../../hooks/useTabNavigation';
 
 type NavItemProps = {
   children: React.ReactNode;
@@ -11,8 +11,8 @@ function NavItem({ children, isActive, onClick }: NavItemProps) {
     <li
       className={`${
         isActive
-          ? "font-semibold bg-white  shadow-sm"
-          : "font-normal text-gray-500 hover:bg-gray-200"
+          ? 'font-semibold bg-white  shadow-sm'
+          : 'font-normal text-gray-500 hover:bg-gray-200'
       } p-2 m-1 rounded-md  text-center flex-1 w-1/4`}
     >
       <button onClick={onClick}>{children}</button>
@@ -25,28 +25,28 @@ export function TabNavigation() {
   return (
     <ul className="flex justify-between p-1 bg-gray-100 rounded-md">
       <NavItem
-        onClick={() => scrollToView("featured")}
+        onClick={() => scrollToView('assets')}
         isActive={currentTabIndex === 0}
       >
-        Featured
+        Assets
       </NavItem>
       <NavItem
-        onClick={() => scrollToView("trending")}
+        onClick={() => scrollToView('dataViz')}
         isActive={currentTabIndex === 1}
       >
-        Trending
+        Data
       </NavItem>
       <NavItem
-        onClick={() => scrollToView("new")}
+        onClick={() => scrollToView('storyboards')}
         isActive={currentTabIndex === 2}
       >
-        New
+        Storyboard
       </NavItem>
       <NavItem
-        onClick={() => scrollToView("popular")}
+        onClick={() => scrollToView('kpis')}
         isActive={currentTabIndex === 3}
       >
-        Popular
+        KPI
       </NavItem>
     </ul>
   );

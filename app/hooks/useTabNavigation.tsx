@@ -1,18 +1,18 @@
-import { createContext, useContext, useRef, useState } from "react";
-import { useDebounce } from "../hooks/useDebounce";
+import { createContext, useContext, useRef, useState } from 'react';
+import { useDebounce } from '../hooks/useDebounce';
 
 export type SectionElement = {
-  featured: Element;
-  trending: Element;
-  new: Element;
-  popular: Element;
+  dataViz: Element;
+  assets: Element;
+  storyboards: Element;
+  kpis: Element;
 };
 
 const sectionMapping: Record<keyof SectionElement, number> = {
-  featured: 0,
-  trending: 1,
-  new: 2,
-  popular: 3,
+  assets: 0,
+  dataViz: 1,
+  storyboards: 2,
+  kpis: 3,
 };
 
 const TabNavigationContext = createContext<null | {
@@ -29,25 +29,25 @@ export function TabNavigationProvider({
   children: React.ReactNode;
 }) {
   const [tabIndex, setTabIndex] = useState(0);
-  const currentTabIndex = useDebounce(tabIndex, 280);
+  const currentTabIndex = useDebounce(tabIndex, 200);
 
   const sectionsRef = useRef<SectionElement>({
-    featured: null,
-    trending: null,
-    new: null,
-    popular: null,
+    dataViz: null,
+    assets: null,
+    storyboards: null,
+    kpis: null,
   });
 
   const scrollToView = (sectionName: keyof SectionElement) => {
     sectionsRef.current[sectionName]?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
+      behavior: 'smooth',
+      block: 'start',
     });
     setTabIndex(sectionMapping[sectionName]);
   };
 
   const setCurrentTabIndex = (index: number | keyof SectionElement) => {
-    if (typeof index === "number") {
+    if (typeof index === 'number') {
       if (index === tabIndex) return;
       setTabIndex(index);
     } else {
@@ -81,7 +81,7 @@ export function useTabNavigation() {
 
   if (!context) {
     throw new Error(
-      `useTabNavigation components cannot be rendered outside the TabNavigationProvider component`
+      `useTabNavigation components cannot be rendered outside the TabNavigationProvider component`,
     );
   }
 
