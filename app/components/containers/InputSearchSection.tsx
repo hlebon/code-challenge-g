@@ -105,7 +105,7 @@ export function InputSearchSection() {
         onClick={handleOpenModal}
       />
       {isModalOpen && (
-        <BaseModal onClose={handleCloseModal}>
+        <BaseModal id="modal_search" onCloseBackdrop={handleCloseModal}>
           <div className="w-full">
             <div className="bg-gray-100 p-4 sticky top-4 z-20 w-full flex items-center border border-gray-400 shadow-inner rounded-md">
               <InputField

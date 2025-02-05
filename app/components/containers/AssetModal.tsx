@@ -82,7 +82,7 @@ export function AssetModal() {
   const category = selectedItem.id.split('_')[0] as keyof typeof mapping;
 
   return (
-    <BaseModal onClose={handleCloseModal}>
+    <BaseModal id="modal_library" onClose={handleCloseModal}>
       <div className="w-full row-gap-lg">
         <ModalHeader
           title={selectedItem.name}
