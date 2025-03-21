@@ -18,7 +18,8 @@
 3. **Create an `.env` file:**
 
    - In the root directory of the project, create a file named `.env`.
-   - Add the following line to the `.env` file:
+   - Add the following line to the `.env` file,
+   - The value is probably: http://localhost:3000/api
      ```env
      NEXT_PUBLIC_API_URL=<your_endpoint_here>
      ```
