@@ -27,11 +27,11 @@
 4. **Run the project:**
 
    ```sh
-   npm start
+   npm run dev
    ```
 
 5. **Open your browser:**
-   - Navigate to `http://localhost:3000` to view the app.
+   - Navigate to `http://localhost:3000` or the URL indicated by the console to view the application.
 
 ### Backend Repository
 
